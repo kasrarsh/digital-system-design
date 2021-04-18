@@ -1,6 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use IEEE.STD_LOGIC_ARITH.all;
+-- use ieee.numeric_std.all;
+-- use ieee.numeric_std.all;
 -- use IEEE.STD_LOGIC_UNSIGNED.all;
 entity Fifo_control is
     port (
@@ -11,8 +12,10 @@ entity Fifo_control is
 end Fifo_control;
 
 architecture struct of Fifo_control is
-        signal reader_pointer : STD_LOGIC_VECTOR(3 downto 0);
-        signal writer_pointer : STD_LOGIC_VECTOR(3 downto 0);
+        signal reader_pointer : unsigned(3 downto 0);
+        signal writer_pointer : unsigned(3 downto 0);
+        -- signal reader_pointer : std_logic_vector(3 downto 0);
+        -- signal writer_pointer : std_logic_vector(3 downto 0);
         signal full_fifo      : std_logic;
         signal empty_fifo     : std_logic;
     begin
@@ -29,6 +32,7 @@ architecture struct of Fifo_control is
                     else
                             -- i don't know what todod
                             -- maybe send w_address
+                            -- w_address <= std_logic_vector(writer_pointer(2 downto 0));
                             -- w_address <= writer_pointer(2 downto 0);
                     end if;
                     if(rd = '1' and empty_fifo = '1') then
@@ -36,6 +40,7 @@ architecture struct of Fifo_control is
                     else
                         -- i don't know what todod
                         -- maybe send r_address
+                        -- r_address <= std_logic_vector(reader_pointer(2 downto 0));
                         -- r_address <= reader_pointer(2 downto 0);
                     end if;
                 end if;
