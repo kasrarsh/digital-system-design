@@ -13,6 +13,25 @@ architecture arch of JK_FF is
 	signal q_temp: std_logic;
 
 	begin
+		-- process(clk,reset)
+		-- 	begin 
+		-- 		if(reset = '1') then 
+		-- 			r_reg <= (othres => '0');
+		-- 		elsif(clk'event and clk = '1') then
+		-- 			r_reg <= r_next
+		-- 		end if;
+		-- end process;
+		-- if(j = '0' and k = '0') then 
+		-- 		r_next <= r_reg;
+		-- 	elsif(j = '0' and k = '1') then
+		-- 		r_next <= '0';
+		-- 	elsif(j = '1' and k = '0') then
+		-- 		r_next <= '1';
+		-- 	elsif(j = '1' and k = '1') then
+		-- 		r_next <= not (r_reg);
+		-- 	end if;
+		-- q <= r_reg
+
 		process(clk, reset) 
 			begin
 				if(reset = '1') then

@@ -15,8 +15,8 @@ entity fifo_buffer is
 end fifo_buffer;
 
 architecture rtl of fifo_buffer is
-    constant BIT_ADDR : natural := address_width;
     constant BIT_DATA : natural := data_width;
+    constant BIT_ADDR : natural := address_width;
     type reg_file_type is array (2**BIT_ADDR-1 downto 0) of 
         std_logic_vector (BIT_DATA-1 downto 0);
     signal array_reg : reg_file_type;    
